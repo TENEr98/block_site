@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { $Enums } from '@prisma/client';
+import { IsIn } from 'class-validator';
 
 export class BlockItemDto {
   @ApiProperty()
@@ -18,4 +19,15 @@ export class BlockItemDto {
 
   @ApiProperty()
   createdAt: Date;
+}
+
+export class AddBlockItemDto {
+  @ApiProperty({
+    enum: [$Enums.BlockItemType.KeyWord, $Enums.BlockItemType.Website],
+  })
+  @IsIn([$Enums.BlockItemType.KeyWord, $Enums.BlockItemType.Website])
+  type: $Enums.BlockItemType;
+
+  @ApiProperty()
+  data: string;
 }
