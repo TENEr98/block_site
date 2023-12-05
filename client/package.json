@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "api:download": "wget http://localhost:3000/api-yaml -O ./src/shared/api/schema.yaml",
+    "api:generate": "orval"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.12.2",
+    "axios": "^1.6.2",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "orval": "^6.21.0",
+    "postcss": "^8",
+    "prettier": "^3.1.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
